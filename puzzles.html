@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Puzzles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mind Puzzle Challenge</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <div class="game-container">
+        <h2>Guess the number (1-10):</h2>
+        <input type="number" id="guess-input">
+        <button onclick="checkGuess()">Submit</button>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        function checkGuess() {
+            let userGuess = document.getElementById("guess-input").value;
+            let feedback = document.getElementById("feedback");
+            if (userGuess == randomNumber) {
+                feedback.textContent = "🎉 Correct! You won!";
+            } else {
+                feedback.textContent = "❌ Try Again!";
+            }
+        }
+    </script>
+</body>
+</html>
